@@ -25,3 +25,4 @@ while (i < quiz.length) {
   console.log(quiz[i].question + " " + quiz[i].answer);
   i++;
 }
+
