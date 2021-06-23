@@ -1,12 +1,4 @@
-const questionObject = {
-  question: 'What is my question?',
-  answer: 'This is my answer',
-  displayQuestion: function () {
- 
-  alert( this.question );
- 
-  }
-}
+
 class question {
   constructor(question, answer) {
     this.question = question;
