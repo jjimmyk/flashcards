@@ -32,6 +32,7 @@ while (i < quiz.length) {
   let q = document.createElement("p");
   q.innerHTML = quiz[i].question;
   newCard.appendChild(q);
+  console.log(flashcards);
   flashcards.appendChild(newCard);
   
   
