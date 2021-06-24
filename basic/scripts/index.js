@@ -26,7 +26,11 @@ function flipCard(quiz) {
   
 let i = 0;
 while (i < quiz.length) {
-  console.log(quiz[i].answer);
+  console.log(quiz[i].question, quiz[i].answer);
+  let newCard = document.createElement("div");
+  newCard.classList.add("card");
+  let q = document.createElement("p");
+  q.innerHTML = quiz[i].question;
   i++;
 }
 }
