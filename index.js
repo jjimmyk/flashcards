@@ -31,8 +31,8 @@ while (i < quiz.length) {
   newCard.classList.add("card");
   let q = document.createElement("p");
   q.innerHTML = quiz[i].question;
+  console.log(newCard);
   newCard.appendChild(q);
-  console.log(flashcards);
   flashcards.appendChild(newCard);
   
   
