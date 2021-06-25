@@ -26,9 +26,10 @@ let currentI = 0;
 function pageLoad() {
   flashcards = document.getElementById("flashcards");
   flipCard(0);
+	document.getElementById("flashcards").onmouseover = function() { alert("Please click the question to see the answer.") };
+
 }
 
-document.getElementById("flashcards").onmouseover = function() { alert("Please click the question to see the answer.") };
 
 //Define the function flipCard:
 //set the current index to i.
