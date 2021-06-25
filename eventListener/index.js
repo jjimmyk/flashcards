@@ -13,7 +13,7 @@ let quiz = [];
 //Add the three objects to the array.
 quiz.push(new question('What is 3+5?', '8'));
 quiz.push(new question('What is your favorite color?', 'blue'));
-quiz.push(new question('What is optimal swallow velocity?', 'I do not know!'));
+quiz.push(new question('What is the optimal swallow velocity?', 'I do not know!'));
 
 //Declare the variable flashcards.
 //Set the current index to 0.
