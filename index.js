@@ -36,7 +36,7 @@ function pageLoad() {
 //within the aray 'quiz'.
 //Set the inner HTML of flashcards to the inner HTML of flashcards and the value of div.
 function flipCard(i) {
-	for (let i in quiz)
+	for (i in quiz)
 	{
 		let div = `<div id='divQuestion${i}' onClick=showAnswer(${i})>${quiz[i].question}</div>`;
 		flashcards.innerHTML=flashcards.innerHTML+div;
