@@ -17,18 +17,24 @@ quiz.push(new question('What is your favorite color?', 'blue'));
 quiz.push(new question('What is optimal swallow velocity?', 'I do not know!'));
 
 
-//Wait for the user to click on the button. When user clicks button, set counter to 0. Then, while counter is less than length of the array, print the answer of the
-//item in the array.
-
+//Declare the variables flashcards, quiz answer, and current index.
 let flashcards = null;
 let divQuizAnswer = null;
 let currentI = 0;
+
+//Define the function pageLoad. Set the above-declared variable divQuizAnswer to the element with ID "quizAnswer".
+//Set the above-declared variable divQuizAnswer to the HTML element with ID "quizAnswer".
+//Set the above-declared variable flashcards to the HTML element with the ID "flashcards".
+//Call the function flipCard, which is defined below.
 function pageLoad() {
   divQuizAnswer = document.getElementById("quizAnswer");
-  flashcards=document.getElementById("flashcards");
+  flashcards = document.getElementById("flashcards");
   flipCard();
 }
 
+//For each index within the array 'quiz', when clicked, call the function showAnswer (defined below) on the question element of the relevant index 
+//within the aray 'quiz'.
+//Set the inner HTML of flashcards to the inner HTML of flashcards and the value of div.
 function flipCard(i) {
 	for (let i in quiz)
 	{
@@ -37,6 +43,7 @@ function flipCard(i) {
 	}
 }
 
+//Define the function showAnswer to reveal the answer element of the relevant index within the quiz array.
 function showAnswer(i)
 {
 	document.getElementById("divQuestion"+i).innerHTML=quiz[i].answer;
