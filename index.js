@@ -14,31 +14,33 @@ let quiz = [];
 //Add the three objects to the array.
 quiz.push(new question('What is 3+5?', '8'));
 quiz.push(new question('What is your favorite color?', 'blue'));
-quiz.push(new question('What is optimal swallow velocity?', 'I do not know!'));
+quiz.push(new question('What is the optimal swallow velocity?', 'I do not know!'));
 
 
-//Declare the variables flashcards, quiz answer, and current index.
+//Declare the variables flashcards and current index.
 let flashcards = null;
 let currentI = 0;
 
-//Define the function pageLoad. Set the above-declared variable divQuizAnswer to the element with ID "quizAnswer".
-//Set the above-declared variable divQuizAnswer to the HTML element with ID "quizAnswer".
-//Set the above-declared variable flashcards to the HTML element with the ID "flashcards".
-//Call the function flipCard, which is defined below.
+//Define the function pageLoad:
+//Declare variable flashcards to be the HTML element with ID flashcards.
+//Call the function flipCard with parameter 0 to reveal the first question.
 function pageLoad() {
   flashcards = document.getElementById("flashcards");
   flipCard(0);
 }
 
-//For each index within the array 'quiz', when clicked, call the function showAnswer (defined below) on the question element of the relevant index 
-//within the aray 'quiz'.
-//Set the inner HTML of flashcards to the inner HTML of flashcards and the value of div.
+//Define the function flipCard:
+//set the current index to i.
+//Make the variable flashcards display the question element of the relevant index.
 function flipCard(i) {
 	currentI = i;
 	flashcards.innerHTML = quiz[i].question;
 }
 
-//remember to comment on this.
+//Define the function showNext:
+//Make the answer on screen disappear by setting the inner HTML of the answer HTML element to "".
+//If the current index is less than the array length -1, call flipCard and increment the current index.
+//If we've reached the end of the array, display the first question.
 function showNext() {
 	document.getElementById("answer").innerHTML="";
 	if (currentI < quiz.length -1)
@@ -55,6 +57,10 @@ function showAnswer()
 	
 }
 
+//Define the function flipAll Cards:
+//For the index with the array quiz, declare variable divId as divQuestion and i.
+//declare variable div as the question element of the object at the relevant index.
+//Make div be displayed in the inner HTML of flashcards.
 function flipAllCards() {
 	for (let i in quiz) {
 		let divId = "divQuestion"+i;
@@ -62,6 +68,7 @@ function flipAllCards() {
 		flashcards.innerHTML=flashcards.innerHTML+div;
 		console.log(div);
 	}
+	//Add an event listener to the HTML element with ID divId. On a click, call the function showAnswer to reveal the relevant answer.
 	for (let i in quiz) {
 		let divId = "divQuestion"+i;
 		document.getElementById(divId).addEventListener("click", function (){showAnswer(i)});
