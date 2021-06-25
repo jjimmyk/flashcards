@@ -2,18 +2,22 @@
 
 <html>
   <head>
-    <script src="index.js?v=2"></script>
+    <script src="index.js?v=3"></script>
   </head>
   <body onload="pageLoad()">
     
     <h1>My Flashcards</h1>
  
-   <div id="flashcards" onClick='showAnswer()'>
+   <div onclick="showAnswer()" id="flashcards">
+   </div>
+	  
+	  <div id='answer'>
+	  </div>
+	  
+	  <button onclick="showNext()" id='btnNext'>Next</button>
+	  
+	  
             
-    </div>
-    <div id='quizAnswer'>
-	
-	</div>
     
     
  
