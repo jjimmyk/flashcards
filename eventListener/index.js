@@ -26,29 +26,45 @@ let currentIndex=0;
 function pageLoad ()
 {
 	flashcards=document.getElementById("flashcards");
-	flipCard();
+	flashcards.addEventListener("click", function () {showAnswer()});
+	document.getElementById("btnNext").addEventListener("click", function() {showNext()});
+	flipCard(0);
 }
 
 //Define the function flipCard:
 //For the relevant index within the array quiz, add an event listener onto the question element of the object.  The event listener calls the function showAnswer,
 //defined below, on the relevant object at index i within array quiz.
 function flipCard(i) {
-	for (let i in quiz)
-	{
+	currentIndex=i;
+	flashcards.innerHTML = quiz[i].question;
+	}
+
+
+function showNext() {
+	document.getElementById("answer").innerHTML="";
+	if (currentIndex < quiz.lenth -1)
+		flipCard(++currentIndex);
+	else
+		flipCard(0);
+}
+
+//Define the function showAnswer:
+//Set the inner HTML of the element with ID divQuestion+1 to the answer element of the object at index i within the array quiz.
+function showAnswer()
+{
+	document.getElementById("answer").innerHTML=quiz[currentIndex].answer;
+}
+
+
+function flipAllCards() {
+	for (let i in quiz) {
 		let divId = "divQuestion"+i;
 		let div = `<div id='divQuestion${i}'>${quiz[i].question}</div>`;
 		flashcards.innerHTML=flashcards.innerHTML+div;
 		console.log(div);
 	}
-	for (let i in quiz) 
-	{
+	for (let i in quiz) {
 		let divId = "divQuestion"+i;
 		document.getElementById(divId).addEventListener("click", function (){showAnswer(i)});
 	}
-}
-//Define the function showAnswer:
-//Set the inner HTML of the element with ID divQuestion+1 to the answer element of the object at index i within the array quiz.
-function showAnswer(i)
-{
-	document.getElementById("divQuestion"+i).innerHTML=quiz[i].answer;
 }
