@@ -26,7 +26,7 @@ let currentI = 0;
 function pageLoad() {
   flashcards = document.getElementById("flashcards");
   flipCard(0);
-	document.getElementById("flashcards").onmouseover = function() { console.log("Please click the question to see the answer.") };
+	document.getElementById("flashcards").onmouseover = function() { document.write("Please click the question to see the answer.") };
 
 }
 
