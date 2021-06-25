@@ -20,10 +20,25 @@ quiz.push(new question('What is optimal swallow velocity?', 'I do not know!'));
 //Wait for the user to click on the button. When user clicks button, set counter to 0. Then, while counter is less than length of the array, print the answer of the
 //item in the array.
 
-let flashcards = document.getElementById("flashcards")
-
-function flipCard(i) {
-  flashcards.innerHTML=quiz[i].question;
+let flashcards = null;
+let divQuizAnswer = null;
+let currentI = 0;
+function pageLoad() {
+  divQuizAnswer = document.getElementById("quizAnswer");
+  flashcards=document.getElementById("flashcards");
+  flipCard();
 }
 
-flipCard(0);
+function flipCard(i) {
+	for (let i in quiz)
+	{
+		let div = `<div id='divQuestion${i}' onClick=showAnswer(${i})>${quiz[i].question}</div>`;
+		flashcards.innerHTML=flashcards.innerHTML+div;
+	}
+}
+
+function showAnswer(i)
+{
+	document.getElementById("divQuestion"+i).innerHTML=quiz[i].answer;
+	
+}
