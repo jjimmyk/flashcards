@@ -42,7 +42,7 @@ function flipCard(i) {
 
 function showNext() {
 	document.getElementById("answer").innerHTML="";
-	if (currentIndex < quiz.lenth -1)
+	if (currentIndex < quiz.length -1)
 		flipCard(++currentIndex);
 	else
 		flipCard(0);
