@@ -64,22 +64,3 @@ function showAnswer()
 }
 
 
-
-//Define the function flipAllCards:
-//For the index in the array quiz, declare variable divId to be divQuestion + the index. 
-//Declare variable div to be the question element of the relevant index in the array.
-//Make flashcards add the variable div to its display.
-//Log variable div to the console.
-function flipAllCards() {
-	for (let i in quiz) {
-		let divId = "divQuestion"+i;
-		let div = `<div id='divQuestion${i}'>${quiz[i].question}</div>`;
-		flashcards.innerHTML=flashcards.innerHTML+div;
-		console.log(div);
-	}
-	//Add an event listener to the element with ID divID that waits for a click. On click, call function showAnswer on the relevant index to reveal the answer.
-	for (let i in quiz) {
-		let divId = "divQuestion"+i;
-		document.getElementById(divId).addEventListener("click", function (){showAnswer(i)});
-	}
-}
