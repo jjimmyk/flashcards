@@ -15,29 +15,40 @@ quiz.push(new question('What is 3+5?', '8'));
 quiz.push(new question('What is your favorite color?', 'blue'));
 quiz.push(new question('What is optimal swallow velocity?', 'I do not know!'));
 
-
-//Wait for the user to click on the button. When user clicks button, set counter to 0. Then, while counter is less than length of the array, print the answer of the
-//item in the array.
-
+//Declare the variable flashcards.
+//Set the current index to 0.
 let flashcards = null;
-let divQuizAnswer = null;
-let currentI = 0;
-function pageLoad() {
-  divQuizAnswer = document.getElementById("quizAnswer");
-  flashcards=document.getElementById("flashcards");
-  flipCard();
+let currentIndex=0;
+
+//Define the function pageLoad:
+//Set the variable flashcards to the HTML element with ID flashcards.
+//Call the function flipCard (defined below).
+function pageLoad ()
+{
+	flashcards=document.getElementById("flashcards");
+	flipCard();
 }
 
+//Define the function flipCard:
+//For the relevant index within the array quiz, add an event listener onto the question element of the object.  The event listener calls the function showAnswer,
+//defined below, on the relevant object at index i within array quiz.
 function flipCard(i) {
 	for (let i in quiz)
 	{
-		let div = `<div id='divQuestion${i}' onClick=showAnswer(${i})>${quiz[i].question}</div>`;
+		let divId = "divQuestion"+i;
+		let div = `<div id='divQuestion${i}'>${quiz[i].question}</div>`;
 		flashcards.innerHTML=flashcards.innerHTML+div;
+		console.log(div);
+	}
+	for (let i in quiz) 
+	{
+		let divId = "divQuestion"+i;
+		document.getElementById(divId).addEventListener("click", function (){showAnswer(i)});
 	}
 }
-
+//Define the function showAnswer:
+//Set the inner HTML of the element with ID divQuestion+1 to the answer element of the object at index i within the array quiz.
 function showAnswer(i)
 {
 	document.getElementById("divQuestion"+i).innerHTML=quiz[i].answer;
-	
 }
