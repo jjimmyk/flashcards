@@ -30,7 +30,8 @@ function pageLoad ()
 	flashcards=document.getElementById("flashcards");
 	flashcards.addEventListener("click", function () {showAnswer()});
 	document.getElementById("btnNext").addEventListener("click", function() {showNext()});
-	document.getElementById("flashcards").addEventListener("mouseover", function() {console.log('Please click on the question to see the answer.')});
+	message=document.getElementById("message");
+	document.getElementById("flashcards").addEventListener("mouseover", function() {message.innerHTML = "Please click on the question to see the answer."});
 	flipCard(0);
 }
 
