@@ -22,21 +22,8 @@ quiz.push(new question('What is optimal swallow velocity?', 'I do not know!'));
 
 let flashcards = document.getElementById("flashcards")
 
-function flipCard(quiz) {
-  
-let i = 0;
-while (i < quiz.length) {
-  console.log(quiz[i].question, quiz[i].answer);
-  let newCard = document.createElement("div");
-  let q = document.createElement("p");
-  q.innerHTML = quiz[i].question;
-  console.log(newCard);
-  newCard.appendChild(q);
-  flashcards.appendChild(newCard);
-  
-  
-  i++;
-}
+function flipCard(i) {
+  document.getElementById("flashcards").innerHTML=quiz[i].question;
 }
 
-flipCard(quiz);
+flipCard(0);
