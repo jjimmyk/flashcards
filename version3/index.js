@@ -28,6 +28,8 @@ function pageLoad() {
   flipCard(0);
 }
 
+document.getElementById("flashcards").onmouseover = function() { alert("Please click the question to see the answer.") };
+
 //Define the function flipCard:
 //set the current index to i.
 //Make the variable flashcards display the question element of the relevant index.
