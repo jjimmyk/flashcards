@@ -23,7 +23,7 @@ quiz.push(new question('What is optimal swallow velocity?', 'I do not know!'));
 let flashcards = document.getElementById("flashcards")
 
 function flipCard(i) {
-  document.getElementById("flashcards").innerHTML=quiz[i].question;
+  flashcards.innerHTML=quiz[i].question;
 }
 
 flipCard(0);
