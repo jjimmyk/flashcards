@@ -28,8 +28,11 @@ let currentIndex=0;
 function pageLoad ()
 {
 	flashcards=document.getElementById("flashcards");
-	flashcards.addEventListener("click", function () {showAnswer()});
+	flashcards.addEventListener("mouseover", function () {showAnswer()});
 	document.getElementById("btnNext").addEventListener("click", function() {showNext()});
+	message=document.getElementById("message");
+	message.innerHTML = "Please hover your cursor over the question to see the answer.";
+	
 	flipCard(0);
 }
 
