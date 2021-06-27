@@ -26,7 +26,7 @@ let currentIndex=0;
 //Add an event listener to variable flashcards that on a click calls the function showAnswer.
 //Add an event listener to the HTML element with ID btnNext (the next button). When the next button is clicked, call function showNext.
 //Finally, call the function flipCard, defined below, with parameter 0 to reveal the first question.
-function pageLoad ()
+function pageLoad()
 {
 	flashcards=document.getElementById("flashcards");
 	flashcards.addEventListener("mouseover", function () {showAnswer()});
