@@ -1,8 +1,9 @@
 //Define the class of questions.
 class question {
-  constructor(question, answer) {
+  constructor(question, answer, image) {
     this.question = question;
     this.answer = answer;
+    this.image = image;
     this.correct = false;
   }
 }
@@ -11,9 +12,9 @@ class question {
 let quiz = [];
 
 //Add the three objects to the array.
-quiz.push(new question('What is 3+5?', '8'));
-quiz.push(new question('What is your favorite color?', 'blue'));
-quiz.push(new question('What is the optimal swallow velocity?', 'I do not know!'));
+quiz.push(new question('What is 3+5?', '8', src="flashcards/images/Screen Shot 2021-06-25 at 10.16.40 PM.png"));
+quiz.push(new question('What is your favorite color?', 'blue', src="flashcards/images/Screen Shot 2021-06-25 at 10.17.05 PM.png"));
+quiz.push(new question('What is the optimal swallow velocity?', 'I do not know!', src="flashcards/images/Screen Shot 2021-06-25 at 10.17.29 PM.png"));
 
 //Declare the variable flashcards.
 //Set the current index to 0.
@@ -64,4 +65,5 @@ function showNext() {
 function showAnswer()
 {
 	document.getElementById("answer").innerHTML=quiz[currentIndex].answer;
+	document.getElementById("image").innerHTML=quiz[currentIndex].image;
 }
