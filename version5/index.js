@@ -12,9 +12,9 @@ class question {
 let quiz = [];
 
 //Add the three objects to the array.
-quiz.push(new question('What is 3+5?', '8', "flashcards/images/Screen Shot 2021-06-25 at 10.16.40 PM.png"));
-quiz.push(new question('What is your favorite color?', 'blue', "flashcards/images/Screen Shot 2021-06-25 at 10.17.05 PM.png"));
-quiz.push(new question('What is the optimal swallow velocity?', 'I do not know!', "flashcards/images/Screen Shot 2021-06-25 at 10.17.29 PM.png"));
+quiz.push(new question('What is 3+5?', '8', "images/Screen Shot 2021-06-25 at 10.16.40 PM.png"));
+quiz.push(new question('What is your favorite color?', 'blue', "images/Screen Shot 2021-06-25 at 10.17.05 PM.png"));
+quiz.push(new question('What is the optimal swallow velocity?', 'I do not know!', "images/Screen Shot 2021-06-25 at 10.17.29 PM.png"));
 
 //Declare the variable flashcards.
 //Set the current index to 0.
@@ -66,6 +66,6 @@ function showNext() {
 function showAnswer()
 {
 	document.getElementById("answer").innerHTML=quiz[currentIndex].answer;
-	document.getElementById("image").src="../images/"+quiz[currentIndex].image;
+	document.getElementById("image").src="../"+quiz[currentIndex].image;
 	alert("../images/"+quiz[currentIndex].image)
 }
