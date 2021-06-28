@@ -31,7 +31,7 @@ function pageLoad()
 	flashcards=document.getElementById("flashcards");
 	flashcards.addEventListener("mouseover", function () {showAnswer()});
 	document.getElementById("btnNext").addEventListener("click", function() {showNext()});
-	message=document.getElementById("message");
+	let message=document.getElementById("message");
 	message.innerHTML = "Please hover your cursor over the question to see the answer.";
 	
 	flipCard(0);
