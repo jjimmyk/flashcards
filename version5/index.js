@@ -66,5 +66,5 @@ function showNext() {
 function showAnswer()
 {
 	document.getElementById("answer").innerHTML=quiz[currentIndex].answer;
-	document.getElementById("image").src=quiz[currentIndex].image;
+	document.getElementById("image").src="../images/"+quiz[currentIndex].image;
 }
